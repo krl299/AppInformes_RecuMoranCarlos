@@ -129,7 +129,7 @@ public class AppInformes extends Application {
 
     public void generaInforme1() {
         try {
-            JasperReport jr = (JasperReport) JRLoader.loadObject(AppInformes.class.getResource("PedidosPorDocumento.jasper"));
+            JasperReport jr = (JasperReport) JRLoader.loadObject(AppInformes.class.getResource("ListadoFacturas.jasper"));
 
             JasperPrint jp = (JasperPrint) JasperFillManager.fillReport(jr, null, conexion);
             JasperViewer.viewReport(jp, false);
@@ -153,7 +153,7 @@ public class AppInformes extends Application {
 
     public void generaInforme3(int parametro) {
         try {
-            JasperReport jr = (JasperReport) JRLoader.loadObject(AppInformes.class.getResource("PedidoPorCliente.jasper"));
+            JasperReport jr = (JasperReport) JRLoader.loadObject(AppInformes.class.getResource("FacturasCliente.jasper"));
             //Map de parámetros
             Map parametros = new HashMap();
             parametros.put("ID", parametro);
@@ -169,7 +169,7 @@ public class AppInformes extends Application {
     public void generaInforme4() {
         try {
             
-            JasperReport jr = (JasperReport) JRLoader.loadObject(AppInformes.class.getResource("Informe4.jasper"));
+            JasperReport jr = (JasperReport) JRLoader.loadObject(AppInformes.class.getResource("SubListadoFacturas.jasper"));
             JasperReport subjr = (JasperReport) JRLoader.loadObject(AppInformes.class.getResource("FacturasPorCliente.jasper"));
             //Map de parámetros
             Map parametros = new HashMap();
